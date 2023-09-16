@@ -21,7 +21,6 @@
 
 <body>
     <?php include 'navbar.php' ?>
-    <?php include 'carrossel.html' ?>
     <?php include 'cabecalho.html' ?>
     <?php include 'conteiner.php' ?>
     <?php include 'footer.php' ?>
