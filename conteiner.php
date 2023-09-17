@@ -5,7 +5,7 @@ $consulta = $cn->query('SELECT nm_produto, vl_preco, img_produto, qt_estoque FRO
 
 <div class="container-fluid">
     <div class="row">
-        <?php while ($exibe = $consulta->fetch_assoc()) { ?>
+        <?php while ($exibe = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
             <div class="col-sm-3 text-center">
                 <img src="imagens/<?php echo $exibe['img_produto']; ?>.jpg" class="img-responsive" style="width:100%">
                 <div>

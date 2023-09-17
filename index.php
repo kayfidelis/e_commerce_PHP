@@ -12,18 +12,26 @@
             margin-top: 1.1em;
         }
 
-        .navbar {
-            margin-bottom: 0
+        .navbar{
+            margin-bottom: 0;
+            padding: 1rem;
+            border-radius: 0; 
         }
     </style>
     <title>Minha loja</title>
 </head>
 
 <body>
-    <?php include 'navbar.php' ?>
-    <?php include 'cabecalho.html' ?>
-    <?php include 'conteiner.php' ?>
-    <?php include 'footer.php' ?>
+
+    <?php 
+        session_start();
+        include 'conexao.php';
+        include 'navbar.php';
+        include 'cabecalho.html' ;
+        include 'conteiner.php' ;
+        include 'footer.php';
+     
+     ?> 
 </body>
-//...........
+
 </html>

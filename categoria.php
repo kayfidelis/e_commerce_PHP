@@ -12,8 +12,10 @@
             margin-top: 1.1em;
         }
 
-        .navbar {
-            margin-bottom: 0
+        .navbar{
+            margin-bottom: 0;
+            padding: 1rem;
+            border-radius: 0; 
         }
     </style>
     <title>Minha loja</title>
@@ -23,17 +25,17 @@
     <?php include 'navbar.php' ?>
     <?php include 'cabecalho.html' ?>
 
-    
+
 
     <?php
     include 'conexao.php';
-    $cat = $_GET ['cat'];
+    $cat = $_GET['cat'];
     $consulta = $cn->query("select nm_produto, vl_preco, img_produto, qt_estoque from vw_produto where ds_categoria = '$cat'");
     ?>
 
     <div class="container-fluid">
         <div class="row">
-            <?php while ($exibe = $consulta->fetch_assoc()) { ?>
+            <?php while ($exibe = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
                 <div class="col-sm-3 text-center">
                     <img src="imagens/<?php echo $exibe['img_produto']; ?>.jpg" class="img-responsive" style="width:100%">
                     <div>
@@ -45,6 +47,7 @@
                     <button class="btn btn-lg btn-block btn-primary">
                         <span class="glyphicon glyphicon-pencil"> Detalhes</span>
                     </button>
+                    </br>
                     <div>
                         <?php if ($exibe['qt_estoque'] > 0) { ?>
                             <button class="btn btn-lg btn-block btn-success">

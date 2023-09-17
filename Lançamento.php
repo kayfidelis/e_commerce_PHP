@@ -11,10 +11,13 @@
         #logon {
             margin-top: 1.1em;
         }
-
-        .navbar {
-            margin-bottom: 0
+        .navbar{
+            margin-bottom: 0;
+            padding: 1rem;
+            border-radius: 0; 
         }
+
+        
     </style>
     <title>Minha loja</title>
 </head>
@@ -30,7 +33,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <?php while ($exibe = $consulta->fetch_assoc()) { ?>
+            <?php while ($exibe = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
                 <div class="col-sm-3 text-center">
                     <img src="imagens/<?php echo $exibe['img_produto']; ?>.jpg" class="img-responsive" style="width:100%">
                     <div>
