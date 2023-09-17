@@ -1,6 +1,6 @@
 <?php
 include 'conexao.php';
-$consulta = $cn->query('SELECT nm_produto, vl_preco, img_produto FROM vw_produto;');
+$consulta = $cn->query('SELECT nm_produto, vl_preco, img_produto, qt_estoque FROM vw_produto;');
 ?>
 
 <div class="container-fluid">
@@ -12,15 +12,24 @@ $consulta = $cn->query('SELECT nm_produto, vl_preco, img_produto FROM vw_produto
                     <h4><b><?php echo mb_strimwidth($exibe['nm_produto'], 0, 30, '...'); ?></b></h4>
                 </div>
                 <div>
-                    <h5>R$ <?php echo number_format($exibe['vl_preco'], 2, ',', '.'); ?></h5>
+                    <h3>R$ <?php echo number_format($exibe['vl_preco'], 2, ',', '.'); ?></h3>
                 </div>
+
                 <button class="btn btn-lg btn-block btn-primary">
                     <span class="glyphicon glyphicon-pencil"> Detalhes</span>
                 </button>
-
-                <button class="btn btn-lg btn-block btn-success">
-                    <span class="glyphicon glyphicon-plus-sign"> Comprar</span>
-                </button>
+                </br>
+                <div>
+                    <?php if ($exibe['qt_estoque'] > 0) { ?>
+                        <button class="btn btn-lg btn-block btn-success">
+                            <span class="glyphicon glyphicon-plus-sign"> Comprar</span>
+                        </button>
+                    <?php } else { ?>
+                        <button class="btn btn-lg btn-block btn-danger">
+                            <span class="glyphicon glyphicon-remove"> Indisponivel</span>
+                        </button>
+                    <?php } ?>
+                </div>
             </div>
         <?php } ?>
     </div>

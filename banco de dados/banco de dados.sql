@@ -51,6 +51,8 @@ call inserir ("lixa importada");
 call inserir ("lixa nacional");
 call inserir ("roda 53mm");
 call inserir ("roda 55mm");
+call inserir ("Rolamento");
+call inserir ("Parafuso");
 -- fim dos iserts na tabela categoria -- 
 
 
@@ -74,6 +76,7 @@ call inserir_marca ("Grizzly");
 call inserir_marca ("Nacional");
 call inserir_marca ("Moska");
 call inserir_marca ("Black Sheep");
+call inserir_marca ("Red Bones");
 -- fim dos iserts na tabela marca -- 
 
 -- começo dos iserts na tabela shapes -- 
@@ -95,21 +98,30 @@ end $$
 delimiter ;
 
 call inserir_produto ('1','1',"Element Blazin white", '340.90', '45', "Blazin white",'N');
-call inserir_produto ('2','1',"Element Alcala", '339.90', '55', "Alcala",'N');
-call inserir_produto ('1','2',"April shane o'neill", '380.00', '80', "shane o'neill",'N');
-call inserir_produto ('1','2',"April Rayssa Leal", '400.00', '30', "RAYSSA LEAL BLACK",'S');
 call inserir_produto ('4','3',"Truck Independent Tiago Lemos", '800.00', '15', "TRUCK INDEPENDENT PRO TIAGO LEMOS",'S');
-call inserir_produto ('3','3',"Truck Independent Polished", '599.99', '28', "Truck Independent Polished",'N');
-call inserir_produto ('3','4',"Truck Silver M Hollow Blk", '450.00', '28', "Truck Silver M Hollow Blk",'N');
-call inserir_produto ('4','4',"Truck Silver Raw", '400.00', '9', "Truck Silver Raw",'N');
-call inserir_produto ('5','5',"Lixa Grizzly Fungi", '109.99', '84', "Lixa Grizzly Fungi",'S');
 call inserir_produto ('5','5',"Lixa Grizzly Stamp", '90.00', '110', "Lixa Grizzly Stamp",'N');
-call inserir_produto ('5','5',"Lixa Grizzly Red", '100.00', '92', "Lixa Grizzly Red",'N');
-call inserir_produto ('6','6',"Lixa Nacional", '14.90', '214', "Lixa Nacional",'N');
+call inserir_produto ('9','9',"Rolamento Red Bones", '180.00', '15', "Rolamento Red Bones",'N');
+call inserir_produto ('1','2',"April shane o'neill", '380.00', '0', "shane o'neill",'N');
 call inserir_produto ('7','7',"Roda Moska Rock", '180.00', '78', "Roda Moska Rock",'s');
-call inserir_produto ('8','7',"Roda Moska Rock Black", '200.00', '56', "Roda Moska Rock Black",'N');
+call inserir_produto ('5','5',"Lixa Grizzly Fungi", '109.99', '0', "Lixa Grizzly Fungi",'S');
+call inserir_produto ('3','3',"Truck Independent Polished", '599.99', '28', "Truck Independent Polished",'N');
+call inserir_produto ('10','8',"Parafuso De Base Black Sheep Gold", '32.00', '60', "Parafuso De Base Black Sheep Gold",'N');
+call inserir_produto ('1','2',"April Rayssa Leal", '400.00', '30', "RAYSSA LEAL BLACK",'S');
+call inserir_produto ('9','9',"Rolamento Bones Swiss", '480.00', '50', "Rolamento Bones Swiss",'S');
+call inserir_produto ('10','3',"Parafuso De Base Independent Gold", '45.00', '47', "Parafuso De Base Independent Gold",'S');
+call inserir_produto ('5','5',"Lixa Grizzly Red", '100.00', '92', "Lixa Grizzly Red",'N');
+call inserir_produto ('3','4',"Truck Silver M Hollow Blk", '450.00', '0', "Truck Silver M Hollow Blk",'N');
+call inserir_produto ('6','6',"Lixa Nacional", '14.90', '214', "Lixa Nacional",'N');
+call inserir_produto ('7','8',"Roda Black Sheep", '100.00', '0', "Roda Black Sheep",'N');
+call inserir_produto ('2','1',"Element Alcala", '339.90', '55', "Alcala",'N');
 call inserir_produto ('8','8',"Roda Black Sheep Tubo", '120.00', '114', "Roda Black Sheep Tubo",'N');
-call inserir_produto ('7','8',"Roda Black Sheep", '100.00', '189', "Roda Black Sheep",'N');
+call inserir_produto ('9','8',"Rolamento Black Sheep Gold", '80.00', '0', "Rolamento Black Sheep Gold",'S');
+call inserir_produto ('10','8',"Parafuso De Base Black Sheep", '16.90', '112', "Parafuso De Base Black Sheep",'N');
+call inserir_produto ('4','4',"Truck Silver Raw", '400.00', '9', "Truck Silver Raw",'N');
+call inserir_produto ('10','3',"Parafuso De Base Independent", '35.00', '0', "Parafuso De Base Independent",'N');
+call inserir_produto ('9','8',"Rolamento Black Sheep Black", '60.00', '15', "Rolamento Black Sheep Black",'N');
+call inserir_produto ('8','7',"Roda Moska Rock Black", '200.00', '56', "Roda Moska Rock Black",'N');
+
 -- fim dos iserts na tabela shapes -- 
 -- fim dos inserts -- 
 
@@ -131,3 +143,5 @@ inner join tbl_categoria
 on tbl_produto.cd_categoria = tbl_categoria.cd_categoria;
 
 select * from vw_produto;
+
+select nm_produto, vl_preco, img_produto from vw_produto where ds_categoria = 'shape';

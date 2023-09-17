@@ -7,19 +7,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Gruta.SB</a>
+      <a class="navbar-brand" href="#">GRUTA.SB</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Novidades</a></li>
+        <li><a href="index.php">HOME<span class="sr-only">(current)</span></a></li>
+        <li><a href="Lançamento.php">NOVIDADES</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Marcas<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PEÇAS<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Shape</a></li>
-            <li><a href="#">Lixa</a></li>
-            <li><a href="#">Roda</a></li>
-            <li><a href="#">Truck</a></li>
+            <li><a href="categoria.php?cat=shape">Shape</a></li>
+            <li><a href="categoria.php?cat=truck">Truck</a></li>
+            <li><a href="categoria.php?cat=roda">Roda</a></li>
+            <li><a href="categoria.php?cat=lixa">Lixa</a></li>
+            <li><a href="categoria.php?cat=rolamento">Rolamento</a></li>
+            <li><a href="categoria.php?cat=parafuso">Parafuso de Base</a></li>
           </ul>
         </li>
       </ul>
