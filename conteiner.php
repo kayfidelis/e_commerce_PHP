@@ -14,7 +14,7 @@ $consulta = $cn->query('SELECT nm_produto, vl_preco, img_produto, qt_estoque FRO
                 <div>
                     <h3>R$ <?php echo number_format($exibe['vl_preco'], 2, ',', '.'); ?></h3>
                 </div>
-
+                
                 <button class="btn btn-lg btn-block btn-primary">
                     <span class="glyphicon glyphicon-pencil"> Detalhes</span>
                 </button>

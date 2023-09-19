@@ -21,10 +21,11 @@
         .navbar {
             margin-bottom: 0
         }
-        .navbar{
+
+        .navbar {
             margin-bottom: 0;
             padding: 1rem;
-            border-radius: 0; 
+            border-radius: 0;
         }
     </style>
 </head>
@@ -59,9 +60,10 @@
                         <span class="glyphicon glyphicon-ok"> Entrar</span>
                     </button>
 
-                    <button type="submit" class="btn btn-lg btn-link">
-                        Ainda não sou cadastrado
-                    </button>
+
+                    <a href="FormCadastro.php">
+                        <button type="button" class="btn btn-lg btn-link">Ainda não sou cadastrado</button>
+                    </a>
                 </form>
             </div>
         </div>

@@ -12,6 +12,10 @@
             margin-top: 1.1em;
         }
 
+        #adm {
+            margin-top: -0.4rem;
+        }
+
         .navbar{
             margin-bottom: 0;
             padding: 1rem;

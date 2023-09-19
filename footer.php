@@ -1,4 +1,3 @@
-<footer class="conteiner-fluid text-center">
-    <p>SKATE SHOPE ONLINE</p>
+<footer class="container-fluid text-center" style="margin-top: 2.5rem">
+    <p>GRUTA.SB</p>
 </footer>
-

@@ -157,7 +157,7 @@ create table tbl_Usuario(
     no_Cep char (9) not null
 ); 
 -- tabela criada -- 
-
+select * from tbl_Usuario;
 
 -- inserindo dados na tabela usuário -- 
 drop procedure if exists inserir_Usuario;

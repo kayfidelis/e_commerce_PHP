@@ -53,14 +53,20 @@
         <li><a href="#">CONTATO</a></li>
         <?php if (empty($_SESSION['ID'])) { ?>
           <li><a href="login.php"><span class="glyphicon glyphicon-log-in"> LOGIN</a></li>
-        <?php } else {
-          $consulta_usuario = $cn->query("select nm_Usuario from tbl_Usuario where cd_Usuario = '$_SESSION[ID]'");
-          $exibe_usuario = $consulta_usuario->fetch(PDO::FETCH_ASSOC);
-        ?>
-          <li><a href="login.php"><span class="glyphicon glyphicon-user">  <?php echo $exibe_usuario['nm_Usuario'];?>  </a></li>
-          <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> SAIR <span> </a></li>
+          <?php } else {
+
+          if ($_SESSION['Status'] == 0) {
+            $consulta_usuario = $cn->query("select nm_Usuario from tbl_Usuario where cd_Usuario = '$_SESSION[ID]'");
+            $exibe_usuario = $consulta_usuario->fetch(PDO::FETCH_ASSOC);
+          ?>
+            <li><a href="login.php"><span class="glyphicon glyphicon-user"> <?php echo $exibe_usuario['nm_Usuario']; ?> </a></li>
+            <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> SAIR <span> </a></li>
+          <?php } else { ?>
+            <li><a href="adm.php"><button class="btn-sm btn-warning" id="adm">Administrador</button></a></li>
+            <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> SAIR <span> </a></li>
+          <?php } ?>
         <?php } ?>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>

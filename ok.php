@@ -1,8 +1,9 @@
+
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Minha Loja - Logon de usu�rio</title>
+<title>Minha Loja - Logon de usuário</title>
 	
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	
@@ -44,19 +45,17 @@
 		
 			<div class="col-sm-4 col-sm-offset-4 text-center">
 				
-				<h2>Usuário ou senha incorreto!!</h2>
+				<h2>Usuário Cadastrado com sucesso!!</h2>
 				
-				<a href="login.php" class="btn btn-block btn-default" role="button">Tentar Novamente</a>
-				
-				<a href="FormCadastro.php">
-					<button type="button" class="btn btn-lg btn-link">Ainda não sou cadastrado</button>
-				</a>
+				<a href="login.php" class="btn btn-block btn-info" role="button">Entrar no loja</a>
 							
 			</div>
 		</div>
 	</div>
 	
 	<?php include 'footer.php' ?>
+	
+	
 	
 	
 </body>
