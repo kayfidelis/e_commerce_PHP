@@ -32,7 +32,7 @@
 
 <body>
     <?php
-
+    session_start();
     include 'conexao.php';
     include 'navbar.php';
     include 'cabecalho.html';

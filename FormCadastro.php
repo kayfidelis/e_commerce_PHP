@@ -21,6 +21,9 @@
         .navbar {
             margin-bottom: 0;
         }
+        #adm {
+            margin-top: -0.4rem;
+        }
     </style>
 
     <script>
@@ -38,7 +41,7 @@
 <body>
 
     <?php
-
+    session_start();
     include 'conexao.php';
     include 'navbar.php';
     include 'cabecalho.html';
