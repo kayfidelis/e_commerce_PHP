@@ -61,7 +61,7 @@
 
             <div class="col-md-4 col-sm-offset-1">
 
-                <img src="imagens/<?php echo $exibir['img_produto']; ?>.jpg" class="img-responsive" style="width:100%;">
+                <img src="imagens/<?php echo $exibir['img_produto']; ?>" class="img-responsive" style="width:100%;">
 
             </div>
 

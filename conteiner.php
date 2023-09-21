@@ -7,7 +7,7 @@ $consulta = $cn->query('SELECT cd_produto, nm_produto, vl_preco, img_produto, qt
     <div class="row">
         <?php while ($exibe = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
             <div class="col-sm-3 text-center">
-                <img src="imagens/<?php echo $exibe['img_produto']; ?>.jpg" class="img-responsive" style="width:100%">
+                <img src="imagens/<?php echo $exibe['img_produto']; ?>" class="img-responsive" style="width:100%">
                 <div>
                     <h4><b><?php echo mb_strimwidth($exibe['nm_produto'], 0, 30, '...'); ?></b></h4>
                 </div>
