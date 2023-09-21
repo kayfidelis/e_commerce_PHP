@@ -22,14 +22,12 @@
             margin-top: -0.4rem;
         }
     </style>
-    <title>Minha loja</title>
+    <title>GRUTA.SB</title>
 </head>
 
 <body>
-
-    <?php
-    session_start();
-    include 'navbar.php' ?>
+    <?php session_start(); ?>
+    <?php include 'navbar.php' ?>
     <?php include 'cabecalho.html' ?>
 
 
@@ -64,8 +62,8 @@
 
                         <div class="text-center" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
                             <a href="detalhes.php?cd=<?php echo $exibe['cd_produto']; ?>">
-                                <button class="btn btn-lg btn-block btn-default glyphicon glyphicon-pencil">
-                                    <span style="color: cadetblue;"> Detalhes</span>
+                                <button class="btn btn-lg btn-block btn-primary  glyphicon glyphicon-pencil">
+                                    <span> Detalhes</span>
                                 </button>
                             </a>
                         </div>

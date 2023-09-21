@@ -22,7 +22,7 @@
             border-radius: 0; 
         }
     </style>
-    <title>Minha loja</title>
+    <title>GRUTA.SB</title>
 </head>
 
 <body>

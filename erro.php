@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Minha Loja - Logon de usu�rio</title>
+	<title>GRUTA.SB</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 

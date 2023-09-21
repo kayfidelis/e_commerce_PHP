@@ -1,15 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style type="text/css">
+    <meta charset="utf-8">
+    <title>Mantos Sagrados - Busca de produtos</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
         #logon {
             margin-top: 1.1em;
+        }
+
+        #adm {
+            margin-top: -0.4rem;
         }
 
         .navbar {
@@ -17,22 +30,29 @@
             padding: 1rem;
             border-radius: 0;
         }
-
-        #adm {
-            margin-top: -0.4rem;
-        }
     </style>
-    <title>GRUTA.SB</title>
 </head>
 
 <body>
-    <?php session_start(); ?>
-    <?php include 'navbar.php' ?>
-    <?php include 'cabecalho.html' ?>
 
     <?php
+
+    session_start();
+
     include 'conexao.php';
-    $consulta = $cn->query('SELECT cd_produto, nm_produto, vl_preco, img_produto, qt_estoque FROM vw_produto where sg_lançamento = "S"');
+    include 'navbar.php';
+    include 'cabecalho.html';
+
+    $pesquisa = $_GET['txtbuscar'];
+    $consulta = $cn->query("select * from vw_produto where nm_produto like concat ('%','$pesquisa','%') or ds_categoria like concat ('%','$pesquisa','%')");
+
+    if (empty($_GET['txtbuscar'])) {
+        echo "<html><script>location.href='index.php'</script></html>";
+    }
+
+    if ($consulta->rowCount() == 0) {
+        echo "<html><script>location.href='erro2.php'</script></html>";
+    }
     ?>
 
     <div class="container-fluid">
@@ -46,18 +66,7 @@
                     <div>
                         <h3>R$ <?php echo number_format($exibe['vl_preco'], 2, ',', '.'); ?></h3>
                     </div>
-
                     <div class="text-center">
-                        <?php if ($exibe['qt_estoque'] > 0) { ?>
-                            <button class="btn btn-lg btn-block btn-success">
-                                <span class="glyphicon glyphicon-usd"> Comprar</span>
-                            </button>
-                        <?php } else { ?>
-                            <button class="btn btn-lg btn-block btn-danger" disabled>
-                                <span class="glyphicon glyphicon-remove"> Indisponível</span>
-                            </button>
-                        <?php } ?>
-
                         <div class="text-center" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
                             <a href="detalhes.php?cd=<?php echo $exibe['cd_produto']; ?>">
                                 <button class="btn btn-lg btn-block btn-primary  glyphicon glyphicon-pencil">
@@ -68,10 +77,12 @@
                     </div>
                 </div>
             <?php } ?>
-        </div>
-    </div>
+            <?php
 
-    <?php include 'footer.php' ?>
+            include 'footer.php';
+
+            ?>
+
 </body>
 
 </html>
