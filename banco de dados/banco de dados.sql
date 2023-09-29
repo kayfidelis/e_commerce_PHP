@@ -183,5 +183,41 @@ delimiter ;
 call inserir_Usuario('Kayque Rodrigues', 'kayque@gmail.com', '123456', 1 ,'Rua Santo Antonio, 43', 'São Paulo', '05489-052');
 call inserir_Usuario('Adriano Nascimento', 'Adriano@gmail.com', '145236', 0 ,'Rua Amorim, 57', 'Rio de janeiro', '05879-025');
 call inserir_Usuario('Kenha Tavares', 'Tavares@gmail.com', '238794', 0 ,'Rua Santa Ana, 89', 'São Paulo', '08754-063');
+
+
+create table tbl_vendas(
+cd_venda int(11) primary key auto_increment,
+no_ticket varchar (20) not null,
+cd_cliente int (11) not null,
+cd_produto int (11) not null,
+qt_produto int (11) not null,
+vl_item decimal(10,2) not null,
+vl_total_item decimal(10,2) generated always as ((qt_produto * vl_item)) virtual,
+dt_venda date not null
+);
+
+drop procedure if exists insVenda
+delimiter $$
+create procedure insVenda(
+	in p_no_ticket varchar (20),
+    in cd_cliente int (11),
+    in p_cd_produto int (11),
+    in p_qt_produto int (11),
+    in p_vl_item decimal (10,2),
+    in p_dt_venda date 
+)
+begin 
+	start transaction;
+		insert into tbl_vendas(no_ticket,cd_cliente,cd_produto,qt_produto,vl_item,dt_venda)
+        values (p_no_ticket, cd_cliente, p_cd_produto, p_qt_produto, p_vl_item, p_dt_venda);
+	commit;
+		rollback;
+end $$
+delimiter ;
+
+call insVenda(111,2,1,1,52.20,'2010-10-10');
+
+select * from tbl_vendas;
+
 -- dados inseridos --
 -- fim dos inserts -- 

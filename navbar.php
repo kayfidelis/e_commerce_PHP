@@ -9,6 +9,10 @@
       padding: 1rem;
       border-radius: 0;
     }
+
+    #botao {
+      margin-top: -0.6rem;
+    }
   </style>
 </head>
 <?php include 'conexao.php' ?>
@@ -22,15 +26,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php">GRUTA.SB</a>
+      <a class="navbar-brand" href="index.php" style="color:aliceblue">GRUTA.SB</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="index.php">HOME<span class="sr-only">(current)</span></a></li>
-        <li><a href="Lançamento.php">NOVIDADES</a></li>
+        <li><a href="index.php" style="color:aliceblue">HOME<span class="sr-only">(current)</span></a></li>
+        <li><a href="Lançamento.php" style="color:aliceblue">NOVIDADES</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PEÇAS<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color:aliceblue">PEÇAS<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="categoria.php?cat=shape">Shape</a></li>
             <li><a href="categoria.php?cat=truck">Truck</a></li>
@@ -50,20 +54,21 @@
         </button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">CONTATO</a></li>
+        <li><a href="carrinho.php"><button class="btn-sm btn-success" id="botao"><span class="glyphicon glyphicon-shopping-cart" style="color:white"></button></a></li>
+        <li><a href="#" style="color:aliceblue">CONTATO</a></li>
         <?php if (empty($_SESSION['ID'])) { ?>
-          <li><a href="login.php"><span class="glyphicon glyphicon-log-in"> LOGIN</a></li>
+          <li><a href="login.php"><span class="glyphicon glyphicon-log-in" style="color:aliceblue"> LOGIN</a></li>
           <?php } else {
 
           if ($_SESSION['Status'] == 0) {
             $consulta_usuario = $cn->query("select nm_Usuario from tbl_Usuario where cd_Usuario = '$_SESSION[ID]'");
             $exibe_usuario = $consulta_usuario->fetch(PDO::FETCH_ASSOC);
           ?>
-            <li><a href="login.php"><span class="glyphicon glyphicon-user"> <?php echo $exibe_usuario['nm_Usuario']; ?> </a></li>
-            <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> SAIR <span> </a></li>
+            <li><a href="login.php"><span class="glyphicon glyphicon-user" style="color:aliceblue"> <?php echo $exibe_usuario['nm_Usuario']; ?> </a></li>
+            <li><a href="sair.php"><span class="glyphicon glyphicon-log-out" style="color:aliceblue"> SAIR <span> </a></li>
           <?php } else { ?>
-            <li><a href="adm.php"><button class="btn-sm btn-warning" id="adm">Administrador</button></a></li>
-            <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> SAIR <span> </a></li>
+            <li><a href="adm.php"><button class="btn-sm btn-success" id="adm">Administrador</button></a></li>
+            <li><a href="sair.php"><span class="glyphicon glyphicon-log-out" style="color:aliceblue"> SAIR <span> </a></li>
           <?php } ?>
         <?php } ?>
       </ul>
