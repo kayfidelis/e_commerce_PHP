@@ -215,9 +215,21 @@ begin
 end $$
 delimiter ;
 
-call insVenda(111,2,1,1,52.20,'2010-10-10');
 
-select * from tbl_vendas;
+
+create view vw_Venda 
+as select 
+	tbl_vendas.no_ticket,
+	tbl_vendas.cd_cliente,
+    tbl_vendas.dt_venda,
+    tbl_vendas.qt_produto,
+    tbl_vendas.vl_total_item,
+    tbl_produto.nm_produto
+from tbl_vendas inner join tbl_produto
+on tbl_vendas.cd_produto = tbl_produto.cd_produto;
+
+select * from vw_Venda where cd_cliente = 2 group by no_ticket;
+
 
 -- dados inseridos --
 -- fim dos inserts -- 

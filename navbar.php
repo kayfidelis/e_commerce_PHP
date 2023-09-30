@@ -54,7 +54,7 @@
         </button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="carrinho.php"><button class="btn-sm btn-success" id="botao"><span class="glyphicon glyphicon-shopping-cart" style="color:white"></button></a></li>
+        <li><a href="carrinho.php"><button class="btn-sm btn-success" id="botao"><span class="glyphicon glyphicon-shopping-cart" style="color:white"> Carrinho</button></a></li>
         <li><a href="#" style="color:aliceblue">CONTATO</a></li>
         <?php if (empty($_SESSION['ID'])) { ?>
           <li><a href="login.php"><span class="glyphicon glyphicon-log-in" style="color:aliceblue"> LOGIN</a></li>
