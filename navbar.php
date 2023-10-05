@@ -64,10 +64,10 @@
             $consulta_usuario = $cn->query("select nm_Usuario from tbl_Usuario where cd_Usuario = '$_SESSION[ID]'");
             $exibe_usuario = $consulta_usuario->fetch(PDO::FETCH_ASSOC);
           ?>
-            <li><a href="login.php"><span class="glyphicon glyphicon-user" style="color:aliceblue"> <?php echo $exibe_usuario['nm_Usuario']; ?> </a></li>
+            <li><a href="areaUser.php"><span class="glyphicon glyphicon-user" style="color:aliceblue"> <?php echo $exibe_usuario['nm_Usuario']; ?> </a></li>
             <li><a href="sair.php"><span class="glyphicon glyphicon-log-out" style="color:aliceblue"> SAIR <span> </a></li>
           <?php } else { ?>
-            <li><a href="adm.php"><button class="btn-sm btn-success" id="adm">Administrador</button></a></li>
+            <li><a href="adm.php"><button class="btn-sm btn-success" id="adm" >Administrador</button></a></li>
             <li><a href="sair.php"><span class="glyphicon glyphicon-log-out" style="color:aliceblue"> SAIR <span> </a></li>
           <?php } ?>
         <?php } ?>

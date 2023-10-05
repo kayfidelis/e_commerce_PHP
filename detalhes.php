@@ -76,7 +76,7 @@
 
                 <h2><b> R$ <?php echo number_format($exibir['vl_preco'], 2, ',', '.'); ?> </b></h2>
 
-                <button class="btn btn-lg btn-success">Adicionar ao carrinho</button>
+                <a href="carrinho.php?cd=<?php echo $exibir['cd_produto']; ?>"><button class="btn btn-lg btn-success">Adicionar ao carrinho</button></a>
 
                 <h3>Detalhes do Produto</h3>
 
@@ -85,9 +85,11 @@
             </div>
 
         </div>
+    </div>
 
         <?php include 'footer.php'; ?>
 
 </body>
 
 </html>
+p

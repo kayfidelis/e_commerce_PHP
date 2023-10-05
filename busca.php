@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Mantos Sagrados - Busca de produtos</title>
+    <title>GRUTA.SB - Busca de produtos</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -77,11 +77,13 @@
                     </div>
                 </div>
             <?php } ?>
-            <?php
+        </div>
+    </div>
+    <?php
 
-            include 'footer.php';
+    include 'footer.php';
 
-            ?>
+    ?>
 
 </body>
 
