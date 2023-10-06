@@ -249,4 +249,4 @@ on tbl_vendas.cd_produto = tbl_produto.cd_produto;
 -- view criada com sucesso -- 
 select * from vw_Venda where cd_cliente = 2 group by no_ticket;
 
--- fim --
+-- fimm --

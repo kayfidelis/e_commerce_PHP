@@ -67,7 +67,7 @@ if (isset($_POST['sltcat'], $_POST['txtprod'], $_POST['txtpreco'], $_POST['txtde
             $resizeObj->saveImage($destino . $img_nome1, 100);
         }
 
-        // Redirecione para a página principal após a atualização.
+       
         header('Location: adm.php');
         exit();
     } catch (PDOException $e) {

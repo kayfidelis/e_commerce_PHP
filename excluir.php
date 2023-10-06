@@ -11,17 +11,17 @@ $consulta->bindParam(':cd', $cd, PDO::PARAM_INT);
 $consulta->execute();
 $exibe = $consulta->fetch(PDO::FETCH_ASSOC);
 
-// comando para excluir o registro pelo cd_produto que foi recebido na variável.
+
 $excluir = $cn->prepare("DELETE FROM tbl_produto WHERE cd_produto = :cd");
 $excluir->bindParam(':cd', $cd, PDO::PARAM_INT);
 $excluir->execute();
 
-$foto1 = $exibe['img_produto'];  // salvando nesta variável o nome da imagem do select
+$foto1 = $exibe['img_produto'];  
 
-if (!empty($foto1)) {  // se o conteúdo não estiver vazio, o comando unlink fará a exclusão, indicando a pasta
+if (!empty($foto1)) {  
     unlink($pasta . $foto1);
 }
 
-// redirecionando o usuário para a página lista.php
+
 header('location: lista.php');
 ?>

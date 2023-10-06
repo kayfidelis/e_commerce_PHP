@@ -8,6 +8,7 @@
       margin-bottom: 0;
       padding: 1rem;
       border-radius: 0;
+      background-color: black;
     }
 
     #botao {
@@ -26,7 +27,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php"><span style="color: rgb(67, 123, 192)">GRUTA.SB</a>
+      <a class="navbar-brand" href="index.php"><span style="color: white">GRUTA.SB</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

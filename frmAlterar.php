@@ -113,3 +113,4 @@ $consultaCat = $cn->query("SELECT cd_categoria, ds_categoria FROM tbl_categoria 
 <?php include 'footer.php' ?>
 </body>
 </html>
+

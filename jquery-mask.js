@@ -2,7 +2,7 @@
  * jquery.mask.js
  * @version: v1.14.12
  * @author: Igor Escobar
- *
+ * 
  * Created by Igor Escobar on 2012-03-10. Please report any bug at github.com/igorescobar/jQuery-Mask-Plugin
  *
  * Copyright (c) 2012 Igor Escobar http://igorescobar.com
@@ -33,7 +33,7 @@
 
 /* jshint laxbreak: true */
 /* jshint maxcomplexity:17 */
-/* global define */
+
 
 'use strict';
 
