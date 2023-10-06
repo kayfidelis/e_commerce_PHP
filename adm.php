@@ -72,10 +72,6 @@
                     </button>
                 </a>
                 </br>
-                <button type="submit" class="btn btn-block btn-lg btn-success">
-                    Vendas
-                </button>
-                </br>
                 <a href="sair.php">
                     <button type="submit" class="btn btn-block btn-lg btn-danger">
                         Sair do perfil administrativo

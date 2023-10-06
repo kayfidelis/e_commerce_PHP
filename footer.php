@@ -47,6 +47,7 @@
 <body>
     <footer>
         <h1>GRUTA.SB</h1>
+        <hr/>
         <div class="footer-section">
             <h3>Formas de Pagamento</h3>
             <img src="imagens/footer.png" alt="Visa">
@@ -54,9 +55,9 @@
         <div class="footer-section">
             <h3>Redes Sociais</h3>
             <ul class="social-icons">
-                <li><a href="#"><img src="imagens/icons8-whatsapp-64.png" alt="Whatsapp"></a></li>
-                <li><a href="#"><img src="imagens/icons8-linkedin-64.png" alt="Linkedin"></a></li>
-                <li><a href="#"><img src="imagens/icons8-instagram-64.png" alt="Instagram"></a></li>
+                <li><a href="https://www.whatsapp.com/?lang=pt_br" target="_blank"><img src="imagens/icons8-whatsapp-64.png"></a></li>
+                <li><a href="https://www.linkedin.com/in/kayque-rodrigues-1ab1b4241/" target="_blank"><img src="imagens/icons8-linkedin-64.png"></a></li>
+                <li><a href="https://www.instagram.com/kay.rf/" target="_blank"><img src="imagens/icons8-instagram-64.png"></a></li>
             </ul>
         </div>
         <div class="footer-section">

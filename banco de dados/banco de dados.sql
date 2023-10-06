@@ -45,8 +45,11 @@ create procedure inserir (
   in p_ds_categoria varchar(25) 
 )
 begin 
-	 insert into tbl_categoria(ds_categoria) 
-	 values (p_ds_categoria);
+    start transaction;
+	    insert into tbl_categoria(ds_categoria) 
+	    values (p_ds_categoria);
+    commit;
+        rollback;
 end $$
 delimiter ;
 
@@ -66,8 +69,11 @@ create procedure inserir_marca (
   in p_nm_marca varchar(45)
 )
 begin 
-	insert into tbl_marca(nm_marca) 
-	values (p_nm_marca);
+    start transaction;
+	    insert into tbl_marca(nm_marca) 
+	    values (p_nm_marca);
+    commit;
+        rollback;
 end $$
 delimiter ;
 
@@ -82,7 +88,7 @@ call inserir_marca ("Black Sheep");
 call inserir_marca ("Red Bones");
 -- fim dos iserts na tabela marca -- 
 
--- começo dos iserts na tabela shapes -- 
+-- começo dos iserts na tabela produtos -- 
 drop procedure if exists inserir_produto;
 delimiter $$
 create procedure inserir_produto (
@@ -96,8 +102,11 @@ create procedure inserir_produto (
   in p_descrição varchar (255)
 )
 begin 
-	insert into tbl_produto(cd_categoria, cd_marca, nm_produto, vl_preco, qt_estoque, img_produto, sg_lançamento, descrição) 
-    values (p_cd_categoria, p_cd_marca, p_nm_produto, p_vl_preco, p_qt_estoque, p_img_produto, p_sg_lançamento, p_descrição);
+    start transaction;
+	    insert into tbl_produto(cd_categoria, cd_marca, nm_produto, vl_preco, qt_estoque, img_produto, sg_lançamento, descrição) 
+        values (p_cd_categoria, p_cd_marca, p_nm_produto, p_vl_preco, p_qt_estoque, p_img_produto, p_sg_lançamento, p_descrição);
+    commit;
+        rollback;
 end $$
 delimiter ;
 
@@ -125,7 +134,7 @@ call inserir_produto ('2','4',"Truck Silver Raw", '400.00', '9', "Truck Silver R
 call inserir_produto ('6','3',"Parafuso De Base Independent", '35.00', '0', "Parafuso De Base Independent.jpg",'N', 'Parafuso De Base Independent. Parafuso importado ideal para qualquer skate.');
 call inserir_produto ('5','8',"Rolamento Black Sheep Black", '60.00', '15', "Rolamento Black Sheep Black.jpg",'N','Rolamento Black Sheep Black. Rolamento com esferas metálicas e devidamente lubrificadas');
 call inserir_produto ('4','7',"Roda Moska Rock Black", '200.00', '56', "Roda Moska Rock Black.jpg",'N', 'Roda STF. Medida: 53mm');
--- fim dos iserts na tabela shapes -- 
+-- fim dos iserts na tabela produtos -- 
 
 
 -- criando view -- 
@@ -162,6 +171,7 @@ create table tbl_Usuario(
 -- tabela criada -- 
 select * from tbl_Usuario;
 
+
 -- inserindo dados na tabela usuário -- 
 drop procedure if exists inserir_Usuario;
 delimiter $$
@@ -175,16 +185,21 @@ create procedure inserir_Usuario(
     in p_no_Cep char (9)
 )
 begin 
-	insert into tbl_Usuario(nm_Usuario, ds_Email, ds_Senha, ds_Status, ds_Endereço, ds_Cidade, no_Cep)
-	values (p_nm_Usuario, p_ds_Email, p_ds_Senha, p_ds_Status, p_ds_Endereço, p_ds_Cidade, p_no_Cep);
+    start transaction;
+	    insert into tbl_Usuario(nm_Usuario, ds_Email, ds_Senha, ds_Status, ds_Endereço, ds_Cidade, no_Cep)
+	    values (p_nm_Usuario, p_ds_Email, p_ds_Senha, p_ds_Status, p_ds_Endereço, p_ds_Cidade, p_no_Cep);
+    commit;
+        rollback;
 end $$ 
 delimiter ;
 
 call inserir_Usuario('Kayque Rodrigues', 'kayque@gmail.com', '123456', 1 ,'Rua Santo Antonio, 43', 'São Paulo', '05489-052');
 call inserir_Usuario('Adriano Nascimento', 'Adriano@gmail.com', '145236', 0 ,'Rua Amorim, 57', 'Rio de janeiro', '05879-025');
 call inserir_Usuario('Kenha Tavares', 'Tavares@gmail.com', '238794', 0 ,'Rua Santa Ana, 89', 'São Paulo', '08754-063');
+-- dados inseridos com sucesso -- 
 
 
+-- criando tabela vendas -- 
 create table tbl_vendas(
 cd_venda int(11) primary key auto_increment,
 no_ticket varchar (20) not null,
@@ -195,7 +210,10 @@ vl_item decimal(10,2) not null,
 vl_total_item decimal(10,2) generated always as ((qt_produto * vl_item)) virtual,
 dt_venda date not null
 );
+-- tabela criada -- 
 
+
+-- procedure para inserção de vendas -- 
 drop procedure if exists insVenda
 delimiter $$
 create procedure insVenda(
@@ -214,9 +232,10 @@ begin
 		rollback;
 end $$
 delimiter ;
+-- procedure criada com sucesso -- 
 
 
-
+-- criando view para vendas -- 
 create view vw_Venda 
 as select 
 	tbl_vendas.no_ticket,
@@ -227,10 +246,7 @@ as select
     tbl_produto.nm_produto
 from tbl_vendas inner join tbl_produto
 on tbl_vendas.cd_produto = tbl_produto.cd_produto;
-
+-- view criada com sucesso -- 
 select * from vw_Venda where cd_cliente = 2 group by no_ticket;
 
-p
-
--- dados inseridos --
--- fim dos inserts -- 
+-- fim --
