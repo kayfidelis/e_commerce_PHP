@@ -1,7 +1,7 @@
 <?php 
 
     $servidor = "localhost";
-    $usuario = "Kayque";
+    $usuario = "KayqueRFT";
     $senha = "12345678";
     $banco = "Skate_Shop";
 

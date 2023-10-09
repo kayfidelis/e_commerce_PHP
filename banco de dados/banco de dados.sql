@@ -4,8 +4,8 @@ use Skate_Shop;
 -- ?? --
 
 -- criando usuário -- 
-CREATE USER 'Kayque'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345678';
- GRANT ALL PRIVILEGES ON Skate_Shop.* TO 'Kayque'@'localhost' WITH GRANT OPTION;
+CREATE USER 'KayqueRFT'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345678';
+ GRANT ALL PRIVILEGES ON Skate_Shop.* TO 'KayqueRFT'@'localhost' WITH GRANT OPTION;
  -- usuário criado -- 
  
  
@@ -249,4 +249,4 @@ on tbl_vendas.cd_produto = tbl_produto.cd_produto;
 -- view criada com sucesso -- 
 select * from vw_Venda where cd_cliente = 2 group by no_ticket;
 
--- fimm --
+-- fim --

@@ -76,7 +76,21 @@
 
                 <h2><b> R$ <?php echo number_format($exibir['vl_preco'], 2, ',', '.'); ?> </b></h2>
 
-                <a href="carrinho.php?cd=<?php echo $exibir['cd_produto']; ?>"><button class="btn btn-lg btn-success">Adicionar ao carrinho</button></a>
+                <br/>
+
+                <?php if ($exibir['qt_estoque'] > 0) { ?>
+                        <a href="carrinho.php?cd=<?php echo $exibir['cd_produto']; ?>">
+                            <button class="btn btn-lg btn-success">
+                                Adicionar ao Carrinho
+                            </button>
+                        </a>
+                    <?php } else { ?>
+                        <button class="btn btn-lg btn-danger" disabled>
+                             Indisponível
+                        </button>
+                    <?php } ?>
+
+                <br/>
 
                 <h3>Detalhes do Produto</h3>
 

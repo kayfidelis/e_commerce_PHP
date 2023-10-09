@@ -70,7 +70,7 @@
             $consulta_usuario = $cn->query("select nm_Usuario from tbl_Usuario where cd_Usuario = '$_SESSION[ID]'");
             $exibe_usuario = $consulta_usuario->fetch(PDO::FETCH_ASSOC);
           ?>
-            <li><a href="areaUser.php"><span class="glyphicon glyphicon-user" > <?php echo $exibe_usuario['nm_Usuario']; ?> </a></li>
+            <li><a href="frmUsuario.php?IdUser=<?php echo $exibe_usuario['nm_Usuario']; ?>"><span class="glyphicon glyphicon-user"></span> <?php echo $exibe_usuario['nm_Usuario']; ?></a></li>
             <li><a href="sair.php" onclick="mostrarAlerta()"><span class="glyphicon glyphicon-log-out"> Sair</span></a></li>
           <?php } else { ?>
             <li><a href="adm.php"><button class="btn-sm btn-success" id="adm">Administrador</button></a></li>
