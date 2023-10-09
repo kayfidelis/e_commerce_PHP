@@ -45,7 +45,7 @@
 		
 			<div class="col-sm-4 col-sm-offset-4 text-center">
 				
-				<h2>Usuário Cadastrado com sucesso!!</h2>
+				<h2>Faça o seu login e boas compras!!</h2>
 				
 				<a href="login.php" class="btn btn-block btn-info" role="button">Entrar no loja</a>
 							

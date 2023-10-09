@@ -39,7 +39,6 @@
 
                 <a href="FormCadastro.php" class="btn btn-block btn-info" role="button">Tentar Novamente</a>
                 </br>
-                <a href="esquecisenha.php" class="btn btn-block btn-primary" role="button">Esqueci a senha</a>
 
 
             </div>

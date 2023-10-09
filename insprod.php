@@ -41,9 +41,12 @@ try {  // try para tentar inserir
     $resizeObj -> resizeImage(1080, 1080, 'crop');
     $resizeObj -> saveImage($destino.$img_nome1, 100);
 
-	header('location:index.php');
+	echo '<script>
+	window.location.href = "index.php";
+	alert("Produto Cadastrado com Sucesso!!");
+  </script>';
 	
-}catch(PDOException $e) {  // se houver algum erro explodir na tela a mensagem de erro
+}catch(PDOException $e) {  
 	
 	
 	echo $e->getMessage();

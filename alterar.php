@@ -67,9 +67,14 @@ if (isset($_POST['sltcat'], $_POST['txtprod'], $_POST['txtpreco'], $_POST['txtde
             $resizeObj->saveImage($destino . $img_nome1, 100);
         }
 
+           // Exibir alerta de alteração bem-sucedida
+    echo '<script>alert("Produto alterado com sucesso!");</script>';
+    // Redirecionar após o alerta
+    echo '<script>window.location.href = "adm.php";</script>';
+    exit();
+
        
-        header('Location: adm.php');
-        exit();
+       
     } catch (PDOException $e) {
         // Se houver um erro, exiba a mensagem de erro.
         echo "Erro: " . $e->getMessage();
@@ -79,4 +84,3 @@ if (isset($_POST['sltcat'], $_POST['txtprod'], $_POST['txtpreco'], $_POST['txtde
     // Você deve adicionar o tratamento apropriado aqui.
     die("Campos do formulário não estão definidos.");
 }
-?>
