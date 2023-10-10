@@ -4,8 +4,8 @@ use Skate_Shop;
 -- ?? --
 
 -- criando usuário -- 
-CREATE USER 'KayqueRFT'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345678';
- GRANT ALL PRIVILEGES ON Skate_Shop.* TO 'KayqueRFT'@'localhost' WITH GRANT OPTION;
+CREATE USER 'Kayque'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345678';
+ GRANT ALL PRIVILEGES ON Skate_Shop.* TO 'Kayque'@'localhost' WITH GRANT OPTION;
  -- usuário criado -- 
  
  

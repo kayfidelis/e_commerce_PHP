@@ -11,12 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="jquery.mask.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#cep").mask("00000-000");
-        });
-    </script>
+    <script src="jquery-mask.js"></script>
     <style type="text/css">
         #logon {
             margin-top: 1.1em;
@@ -32,6 +27,11 @@
             border-radius: 0;
         }
     </style>
+    <script>
+        $(document).ready(function() {
+            $("#cep").mask("00000-000");
+        });
+    </script>
 </head>
 
 <body>
@@ -51,46 +51,35 @@
         <div class="row">
             <div class="col-sm-4 col-sm-offset-4">
                 <h2>Alteração de Usuário</h2>
-                <form method="post" action="alterar.php?cd_altera=<?php echo $id; ?>" name="incluiProd"
-                    enctype="multipart/form-data">
+                <form method="post" action="alteraUser.php?IdUser=<?php echo $id; ?>" name="incluiProd" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="txtprod">Nome</label>
-                        <input type="text" name="txtprod" value="<?php echo $exibe['nm_Usuario']; ?>"
-                            class="form-control" required id="txtprod">
+                        <label for="txtnome">Nome</label>
+                        <input type="text" name="txtnome" value="<?php echo $exibe['nm_Usuario']; ?>" class="form-control" required id="txtnome">
                     </div>
                     <div class="form-group">
-                        <label for="txtprod">Email</label>
-                        <input type="text" name="txtprod" value="<?php echo $exibe['ds_Email']; ?>"
-                            class="form-control" required id="txtprod">
+                        <label for="txtemail">Email</label>
+                        <input type="email" name="txtemail" value="<?php echo $exibe['ds_Email']; ?>" class="form-control" required id="txtemail">
                     </div>
                     <div class="form-group">
-                        <label for="txtprod">Senha</label>
-                        <input type="text" name="txtprod" value="<?php echo $exibe['ds_Senha']; ?>"
-                            class="form-control" required id="txtprod">
+                        <label for="txtsenha">Senha</label>
+                        <input type="text" name="txtsenha" value="<?php echo $exibe['ds_Senha']; ?>" class="form-control" required id="txtsenha">
                     </div>
                     <div class="form-group">
-                        <label for="txtprod">Status</label>
-                        <input type="text" name="txtprod" value="<?php echo $exibe['ds_Status']; ?>"
-                            class="form-control" required id="txtprod">
+                        <label for="txtend">Endereço</label>
+                        <input type="text" name="txtend" value="<?php echo $exibe['ds_Endereço']; ?>" class="form-control" required id="txtend">
                     </div>
                     <div class="form-group">
-                        <label for="txtprod">Endereço</label>
-                        <input type="text" name="txtprod" value="<?php echo $exibe['ds_Endereço']; ?>"
-                            class="form-control" required id="txtprod">
+                        <label for="txtcidade">Cidade</label>
+                        <input type="text" name="txtcidade" value="<?php echo $exibe['ds_Cidade']; ?>" class="form-control" required id="txtcidade">
                     </div>
                     <div class="form-group">
-                        <label for="txtprod">Cidade</label>
-                        <input type="text" name="txtprod" value="<?php echo $exibe['ds_Cidade']; ?>"
-                            class="form-control" required id="txtprod">
+                        <label for="cep">CEP</label>
+                        <input name="txtcep" type="text" value="<?php echo $exibe['no_Cep']; ?>" class="form-control" required id="cep">
                     </div>
-                    <div class="form-group">
-                        <label for="txtprod">CEP</label>
-                        <input type="text" name="txtprod" value="<?php echo $exibe['no_Cep']; ?>"
-                            class="form-control" required id="txtprod">
-                    </div>
-
-                    <button type="submit" class="btn btn-lg btn-default"> Alterar</button>
+                    <button type="submit" class="btn btn-lg btn-primary"> Alterar Minhas Informações</button>
                 </form>
+                <br />
+                <a href="areaUser.php"><button class="btn btn-lg btn-success">Ver Minhas Compras</button></a>
             </div>
         </div>
     </div>
