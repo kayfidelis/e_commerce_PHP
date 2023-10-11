@@ -23,9 +23,9 @@ if (isset($_POST['sltcat'], $_POST['txtprod'], $_POST['txtpreco'], $_POST['txtde
     $qtde = $_POST['txtqtde'];
     $lanc = $_POST['sltlanc'];
 
-    // Realize as substituições de preço aqui
-    $preco = str_replace('.', '', $preco); // Substituindo . por vazio
-    $preco = str_replace(',', '.', $preco); // Substituindo , por .
+
+    $remover2 = ','; // criando variável e atribuindo o valor de virgula para ela
+    $preco = str_replace($remover2, '.', $preco); // removendo virgula de casa decimal,substituindo por ponto
 
     $recebe_foto1 = $_FILES['txtfoto1'];
     $destino = "imagens/";
@@ -67,12 +67,9 @@ if (isset($_POST['sltcat'], $_POST['txtprod'], $_POST['txtpreco'], $_POST['txtde
             $resizeObj->saveImage($destino . $img_nome1, 100);
         }
 
-    echo '<script>alert("Produto alterado com sucesso!");</script>';
-    echo '<script>window.location.href = "adm.php";</script>';
-    exit();
-
-       
-       
+        echo '<script>alert("Produto alterado com sucesso!");</script>';
+        echo '<script>window.location.href = "adm.php";</script>';
+        exit();
     } catch (PDOException $e) {
         // Se houver um erro, exiba a mensagem de erro.
         echo "Erro: " . $e->getMessage();

@@ -11,8 +11,6 @@ $qtde = $_POST['txtqtde'];
 $descrição = $_POST['txtDesc'];
 $lanc = $_POST['sltlanc'];
 
-$remover1='.';  // criando variável e atribuindo o valor de ponto para ela
-$preco = str_replace($remover1, '', $preco); // removendo ponto de casa decimal,substituindo por vazio
 $remover2=','; // criando variável e atribuindo o valor de virgula para ela
 $preco = str_replace($remover2, '.', $preco); // removendo virgula de casa decimal,substituindo por ponto
 
