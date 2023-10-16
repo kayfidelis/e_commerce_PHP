@@ -62,15 +62,19 @@
                         Incluir Produto
                     </button>
                 </a>
-
                 </br>
-
                 <a href="lista.php">
                     <button type="submit" class="btn btn-block btn-lg btn-warning">
                         Alterar / Excluir Produto
                     </button>
                 </a>
                 </br>
+                <a href="venda.php">
+                    <button type="submit" class="btn btn-block btn-lg btn-success">
+                        Vendas
+                    </button>
+                </a>
+                <br/>
                 <a href="sair.php">
                     <button type="submit" class="btn btn-block btn-lg btn-danger">
                         Sair do perfil administrativo
