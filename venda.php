@@ -29,7 +29,7 @@
     }
 
     .venda {
-        justify-content: center;
+        text-align: center; 
     }
     
 </style>
@@ -46,14 +46,17 @@ include 'navbar.php';
 include 'cabecalho.html';
 ?>
 <div class="venda">
-    <h2>Escolha uma Data</h2>
+    <h1>Consulta de Vendas</h1>
+    <br/>
+    <h2>Escolha uma Data para Consultar</h2>
+    <br/>
     <form action="venda2.php" method="get">
         <label for="data">Data:</label>
         <input type="date" id="data" name="data" required>
-        <br><br>
+        <br/><br/><br/>
         <input type="submit" value="Pesquisar Data">
     </form>
-<div>
-    <?php include 'footer.php' ?>
+</div> <!-- Feche a div corretamente -->
+<?php include 'footer.php' ?>
 </body>
 </html>
