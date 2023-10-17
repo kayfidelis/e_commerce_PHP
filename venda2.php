@@ -31,7 +31,7 @@
         }
 
         .date-col {
-            width: 10%;
+            width: 15%;
         }
 
         .ticket-col {
@@ -66,7 +66,10 @@
     }
 
     if ($consulta->rowCount() == 0) {
-        echo "<html><script>location.href='erro2.php'</script></html>";
+        echo '<script>
+	window.location.href = "venda.php";
+	alert("Nenhuma Venda foi encontrada nessa data!");
+  </script>';
     }
     ?>
     <div class="container-fluid">
@@ -76,8 +79,9 @@
                     <div class="col-sm-1 date-col"><p>Data: <?php echo date('d/m/Y', strtotime($exibe['dt_venda'])); ?></p></div>
                     <div class="col-sm-2 ticket-col"><p>NO.Ticket: <?php echo $exibe['no_ticket']; ?></p></div>
                     <div class="col-sm-5 product-col"><p>Nome do Produto: <?php echo $exibe['nm_produto']; ?> </p></div>
-                    <div class="col-sm-1 quantity-col"><p>Quantidade Comprada: <?php echo $exibe['qt_produto']; ?></p></div>
+                    <div class="col-sm-1 quantity-col"><p>Quantidade: <?php echo $exibe['qt_produto']; ?></p></div>
                     <div class="col-sm-2 total-col"><p>Valor Total: <?php echo number_format($exibe['vl_total_item'], 2, ',', '.'); ?></p></div>
+                    <br/><br/>
                 </div>
             <?php } ?>
         </div>
