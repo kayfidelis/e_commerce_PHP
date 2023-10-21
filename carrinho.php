@@ -44,7 +44,6 @@
 	if (empty($_SESSION['ID'])) {
 		echo '<script>
 	window.location.href = "login.php";
-	alert("É necessário estar logado para fazer compras!");
   </script>';
 	}
 

@@ -49,6 +49,11 @@
         .total-col {
             width: 20%;
         }
+        .hr{
+            size: 1vw;
+            background-color: black;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -81,6 +86,7 @@
                     <div class="col-sm-5 product-col"><p>Nome do Produto: <?php echo $exibe['nm_produto']; ?> </p></div>
                     <div class="col-sm-1 quantity-col"><p>Quantidade: <?php echo $exibe['qt_produto']; ?></p></div>
                     <div class="col-sm-2 total-col"><p>Valor Total: <?php echo number_format($exibe['vl_total_item'], 2, ',', '.'); ?></p></div>
+                    <hr class="hr"/>
                     <br/><br/>
                 </div>
             <?php } ?>

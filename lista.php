@@ -31,6 +31,13 @@
             border-radius: 0;
         }
     </style>
+
+    
+  <script>
+    function AlertExcluir() {
+        alert("Produto excluído com sucesso");
+    }
+  </script>
 </head>
 
 <body>
@@ -77,7 +84,7 @@
 
                 </div>
                 <div class="col-sm-2 col-xs-offset-right-1" style="padding-top:20px">
-                    <a href="excluir.php?id=<?php echo $exibe['cd_produto']; ?>">
+                    <a onclick="AlertExcluir()" href="excluir.php?id=<?php echo $exibe['cd_produto'];  ?>">
                         <button class="btn btn-lg btn-block btn-danger">
                             <span class="glyphicon glyphicon-remove"> Excluir</span>
                         </button>

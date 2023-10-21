@@ -67,7 +67,6 @@ if (isset($_POST['sltcat'], $_POST['txtprod'], $_POST['txtpreco'], $_POST['txtde
             $resizeObj->saveImage($destino . $img_nome1, 100);
         }
 
-        echo '<script>alert("Produto alterado com sucesso!");</script>';
         echo '<script>window.location.href = "adm.php";</script>';
         exit();
     } catch (PDOException $e) {

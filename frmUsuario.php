@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>GRUTA.SB</title>
+    <title>GRUTA.SB - Alteração de Usuário</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -12,7 +13,8 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="jquery-mask.js"></script>
-    <style type="text/css">
+
+    <style>
         #logon {
             margin-top: 1.1em;
         }
@@ -26,7 +28,31 @@
             padding: 1rem;
             border-radius: 0;
         }
+
+        /* Estilos personalizados para o formulário */
+        .custom-form {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .custom-form h2 {
+            text-align: center;
+        }
+
+        .custom-form .form-group label {
+            font-weight: bold;
+        }
+
+        .custom-form .form-group input[type="text"],
+        .custom-form .form-group input[type="email"],
+        .custom-form .form-group input[type="password"],
+        .custom-form .form-group input[type="number"] {
+            width: 100%;
+        }
     </style>
+
     <script>
         $(document).ready(function() {
             $("#cep").mask("00000-000");
@@ -47,9 +73,9 @@
     $consulta = $cn->query("SELECT * FROM tbl_Usuario WHERE nm_Usuario='$id'"); // trazendo id pelo nome
     $exibe = $consulta->fetch(PDO::FETCH_ASSOC);
     ?>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="col-sm-4 col-sm-offset-4">
+            <div class="col-sm-6 col-sm-offset-3 custom-form">
                 <h2>Alteração de Usuário</h2>
                 <form method="post" action="alteraUser.php?IdUser=<?php echo $id; ?>" name="incluiProd" enctype="multipart/form-data">
                     <div class="form-group">

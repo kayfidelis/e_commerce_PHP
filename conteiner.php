@@ -3,7 +3,7 @@ include 'conexao.php';
 $consulta = $cn->query('SELECT cd_produto, nm_produto, vl_preco, img_produto, qt_estoque FROM vw_produto;');
 ?>
 
-<div class="container-fluid">
+<div id="container" class="container-fluid">
     <div class="row">
         <?php while ($exibe = $consulta->fetch(PDO::FETCH_ASSOC)) { ?>
             <div class="col-sm-3 text-center">

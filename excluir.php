@@ -23,7 +23,6 @@ if ($excluir->execute()) {
     
     // Redirecionar com JavaScript após a exclusão bem-sucedida
     echo '<script>
-            alert("Produto excluído com sucesso!");
             window.location.href = "lista.php";
           </script>';
 } else {
