@@ -42,6 +42,7 @@
 
     include 'conexao.php';
     include 'navbar.php';
+    include 'cabecalho.html';
 
     if (!empty($_GET['cd'])) {
         $id_prod = $_GET['cd'];

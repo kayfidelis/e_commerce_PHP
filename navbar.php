@@ -11,7 +11,7 @@
       width: 100%;
       position:absolute;
       z-index: 10;
-      background-color: transparent;
+      background: rgba(0, 0, 0, 0.4)
     }
 
     #botao {
