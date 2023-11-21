@@ -162,7 +162,7 @@ create table tbl_Usuario(
 	cd_Usuario int primary key auto_increment,
     nm_Usuario varchar (80) not null,
     ds_Email varchar (80) not null,
-    ds_Senha varchar (6) not null,
+    ds_Senha varchar (80) not null,
     ds_Status boolean not null,
     ds_Endereço varchar (80) not null,
     ds_Cidade varchar (30) not null,
@@ -250,3 +250,17 @@ on tbl_vendas.cd_produto = tbl_produto.cd_produto;
 
 select * from vw_Venda;
 -- fim --
+
+
+
+drop trigger if exists tgi_baixaEstoque;
+delimiter $$
+create trigger tgi_baixaEstoque after insert 
+	on tbl_vendas for each row 
+begin
+	update tbl_produto set qt_estoque = (qt_estoque - new.qt_produto)
+		where cd_produto = new.cd_produto;
+end $$
+delimiter ;
+
+select * from tbl_produto;

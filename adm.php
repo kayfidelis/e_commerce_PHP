@@ -40,13 +40,14 @@
 
     session_start();
 
-    include 'conexao.php';
-    include 'navbar.php';
-    include 'cabecalho.html';
-
     if (empty($_SESSION['Status']) || $_SESSION['Status'] != 1) {
         header('location:index.php');
     }
+
+
+    include 'conexao.php';
+    include 'navbar.php';
+    include 'cabecalho.html';
     ?>
 
     <div class="container-fluid">
@@ -74,7 +75,7 @@
                         Vendas
                     </button>
                 </a>
-                <br/>
+                <br />
                 <a href="sair.php">
                     <button type="submit" class="btn btn-block btn-lg btn-danger">
                         Sair do perfil administrativo
